@@ -2,7 +2,7 @@ package com.hasanozgan.services.myservice.core
 
 import akka.actor.ActorRefFactory
 import com.gettyimages.spray.swagger.SwaggerHttpService
-import com.hasanozgan.services.myservice.httpservices.{MembershipHttpService, UserHttpService}
+import com.hasanozgan.services.myservice.httpservices.{MembershipHttpServiceDoc, MembershipHttpService, UserHttpService}
 import com.hasanozgan.services.myservice.httpservices.core.{HealthHttpService, SwaggerUIHttpService}
 import com.wordnik.swagger.model.ApiInfo
 import spray.routing.HttpServiceActor
@@ -19,7 +19,7 @@ trait ServiceRouteHandler extends HttpServiceActor {
   val apiDoc = new SwaggerHttpService {
     override def actorRefFactory = context
 
-    override def apiTypes = Seq(typeOf[UserHttpService], typeOf[MembershipHttpService])
+    override def apiTypes = Seq(typeOf[UserHttpService], typeOf[MembershipHttpServiceDoc])
     override def apiVersion = "2.0"
     override def baseUrl = "/" // let swagger-ui determine the host and port
     override def docsPath = "api-docs"

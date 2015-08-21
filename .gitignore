@@ -1,6 +1,11 @@
 *.class
 *.log
 
+.idea
+.idea_modules
+projectFilesBackup
+.idea/scala_compiler.xml
+
 # sbt specific
 .cache
 .history
